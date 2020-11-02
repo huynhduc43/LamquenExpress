@@ -10,11 +10,11 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Bé tập tính</title>
+        <title>{{title}}</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        <link rel="stylesheet" href="../public/stylesheets/style.css">
+        <link rel="stylesheet" href="../stylesheets/style.css">
     </head>
     <body>
         <div class="container-fluid container__main">
@@ -22,72 +22,77 @@
             <div class="container pt-3 pb-3">
                 <h2 class="text-center">Bé tập tính</h2>
             </div>
-            <div class="row text-center">
-                <div class="col-md-8 col-sm-12">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6 col-sm-4 col-12 align-self-center label-input">
-                            <label id="label-num1" class="mb-0" for="num1">Số thứ nhất</label>
+
+            {{!-- <form method="post" onsubmit="return isValid('num1', 'num2')"> --}}
+            <form action="/" method="post" onsubmit="return checkCondition()">
+                <div class="row text-center">
+                    <div class="col-md-8 col-sm-12">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-4 col-12 align-self-center label-input">
+                                <label id="label-num1" class="mb-0" for="num1">Số thứ nhất</label>
+                            </div>
+                            <div class="col-lg-9 col-md-6 col-sm-8  col-12 mw-90 input__num">
+                                <input class="form-control" id="num1" type="text" onmouseleave="isNumber(this.id)" name="number1" value="{{number1}}">
+                            </div>  
                         </div>
-                        <div class="col-lg-9 col-md-6 col-sm-8  col-12 mw-90 input__num">
-                            <input class="form-control" id="num1" type="text" onmouseleave="isNumber(this.id)">
-                        </div>  
-                    </div>
-                    
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6 col-sm-4  col-12 align-self-center label-input">
-                            <label id="label-num2" class="mb-0" for="num2">Số thứ hai</label>
-                        </div>
-                        <div class="col-lg-9 col-md-6 col-sm-8  col-12 mw-90 input__num">
-                            <input class="form-control" id="num2" type="text" onmouseleave="isNumber(this.id)">
-                        </div>  
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-12">
-                    <div class="row">
-                        <div class="col-6 type-calc__sum ">
-                            <label class="mb-0 btn btn-type-calc btn-type-sum"  onclick="changeColor()"><input name="tyle-calc" type="radio" id="input-sum" value="input-sum"> Cộng</label>
-                        </div>
-                        <div class="col-6 type-calc__sub ">
-                            <label class="mb-0 btn btn-type-calc btn-type-sub" onclick="changeColor()"><input name="tyle-calc" type="radio" id="input-sub" value="input-sub"> Trừ&nbsp;&nbsp;</label>
+                        
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-4  col-12 align-self-center label-input">
+                                <label id="label-num2" class="mb-0" for="num2">Số thứ hai</label>
+                            </div>
+                            <div class="col-lg-9 col-md-6 col-sm-8  col-12 mw-90 input__num">
+                                <input class="form-control" id="num2" type="text" onmouseleave="isNumber(this.id)" name="number2" value="{{number2}}">
+                            </div>  
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-6 type-calc__multi">
-                            <label class="mb-0 btn btn-type-calc btn-type-sum" onclick="changeColor()"><input name="tyle-calc" type="radio" id="input-multi" value="input-multi"> Nhân</label>
+                    <div class="col-md-4 col-sm-12">
+                        <div class="row">
+                            <div class="col-6 type-calc__sum ">
+                                <label class="mb-0 btn btn-type-calc btn-type-sum"  onclick="changeColor()"><input name="tyle_calc" type="radio" id="input-sum" value="input-sum"> Cộng</label>
+                            </div>
+                            <div class="col-6 type-calc__sub ">
+                                <label class="mb-0 btn btn-type-calc btn-type-sub" onclick="changeColor()"><input name="tyle_calc" type="radio" id="input-sub" value="input-sub"> Trừ&nbsp;&nbsp;</label>
+                            </div>
                         </div>
-                        <div class="col-6 type-calc__div">
-                            <label class="mb-0 btn btn-type-calc btn-type-sub"  onclick="changeColor()"><input name="tyle-calc" type="radio" id="input-div" value="input-div"> Chia</label>
-                        </div>
-                    </div>
-                </div>
-                
-               
-            </div>
-            <div class="row text-center">
-                
-                <div class="col-md-8 col-sm-12 order-md-1 order-sm-2 order-2">
-                    <div class="row">
-                        <div class="col-lg-3 col-md-6 col-sm-4 col-12 align-self-center label-input">Kết quả</div>
-                        <div class="col-lg-9 col-md-6 col-sm-8 col-12 mw-90 b-0 input__num">
-                            <input id="result" class="form-control" type="text"  readonly>
-                        </div>  
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-12 order-md-2 order-sm-1  order-1 align-self-center text-sm-center">
-                    <div class="row">
-                        <div class="col-md-6 col-12">
-                            <div class="btn btn-primary p-1  d-md-block  btn-calc" onclick="calc2Num()">Tính</div>
+                        <div class="row">
+                            <div class="col-6 type-calc__multi">
+                                <label class="mb-0 btn btn-type-calc btn-type-sum" onclick="changeColor()"><input name="tyle_calc" type="radio" id="input-multi" value="input-multi"> Nhân</label>
+                            </div>
+                            <div class="col-6 type-calc__div">
+                                <label class="mb-0 btn btn-type-calc btn-type-sub"  onclick="changeColor()"><input name="tyle_calc" type="radio" id="input-div" value="input-div"> Chia</label>
+                            </div>
                         </div>
                     </div>
                     
                 </div>
-            </div>
+                <div class="row text-center">
+                    
+                    <div class="col-md-8 col-sm-12 order-md-1 order-sm-2 order-2">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6 col-sm-4 col-12 align-self-center label-input">Kết quả</div>
+                            <div class="col-lg-9 col-md-6 col-sm-8 col-12 mw-90 b-0 input__num">
+                                <input id="result" class="form-control" type="text" name="result" value="{{result}}" readonly>
+                            </div>  
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-12 order-md-2 order-sm-1  order-1 align-self-center text-sm-center">
+                        <div class="row">
+                            <div class="col-md-6 col-12">
+                                <!--<div class="btn btn-primary p-1  d-md-block  btn-calc" onclick="calc2Num()">Tính</div>-->
+                                <input class="btn btn-primary p-1  d-md-block  btn-calc" type="submit" value="Tính">
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </form>
             <div class="row mb-4">
                 <div class="col-lg-2 col-md-4 col-sm-4 col-12 align-self-center text-sm-left text-center label-notify">Thông báo</div>
                 <div class="col-lg-9 col-md-8 col-sm-8 col-12 text-center text-sm-left align-self-center font-weight-bold" id="box-notify" >
                     <span id="txt-notify1"></span><span id="txt-notify2" class="font-italic"></span><span id="txt-notify3"></span>
                 </div>
             </div>
+            
         </div>
         
         
@@ -106,6 +111,6 @@
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-        <script language="javascript" src="./betaptinh.js"></script>
+        <script language="javascript" src="../javascripts/betaptinh.js"></script>
     </body>
 </html>

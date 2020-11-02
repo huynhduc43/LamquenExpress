@@ -8,140 +8,139 @@ a {
 } */
 
 html, body{
-  height: 100%;
-  width: 100%;
+    height: 100%;
+    width: 100%;
 }
 
 html{
-  font-size: 16pt;
+    font-size: 16pt;
 }
 
 .container__main{
-  min-height: 100vh;
-  background-color: #1e9b9b;
-  display: grid;
-  justify-items: center;
-  align-content: center;
+    min-height: 100vh;
+    background-color: #1e9b9b;
+    display: grid;
+    justify-items: center;
+    align-content: center;
 }
 
 .container__calculator{
-  background-color: #37e6a3;
-  border-radius: 10px 10px;
-  box-shadow: 5px 5px 15px rgb(73, 73, 73);
+    background-color: #37e6a3;
+    border-radius: 10px 10px;
+    box-shadow: 5px 5px 15px rgb(73, 73, 73);
 }
 
 .label-input{
-  text-align: left;
-  padding-left: 4em;
+    text-align: left;
+    padding-left: 4em;
 }
 
 .input__num input {
-  text-align: right;
-  box-shadow: 2px 2px 5px rgb(122, 122, 122);
+    text-align: right;
+    box-shadow: 2px 2px 5px rgb(122, 122, 122);
 }
 
 .input__num input:active, .input__num input:focus {
-  box-shadow:0px 0px 0px 4px #3f2ebd !important;
+    box-shadow:0px 0px 0px 4px #3f2ebd !important;
 }
 
 .input__num, .type-calc__sum, .type-calc__sub, .type-calc__multi, .type-calc__div{
-  height: 60px;
-  display: grid;
-  align-content: center;
+    height: 60px;
+    display: grid;
+    align-content: center;
 }
 
 .btn-type-calc{
-  padding: 0.2rem;
-  color: white !important;
-  background-color: rgb(15, 143, 111);
+    padding: 0.2rem;
+    background-color: rgb(15, 226, 241);
 }
 
 .btn-type-calc:hover{
-  background-color: rgb(8, 87, 67) !important;
+    background-color: rgb(16, 199, 71) !important;
 }
 
 .btn-type-calc:active, .button-type:focus{
-  background-color: rgb(15, 143, 111);
+    background-color: rgb(15, 226, 241);
 }
 
 input[type=radio] {
-  width: 20px;
-  height: 20px;
+    width: 20px;
+    height: 20px;
 }
 
 .btn-calc{
-  width: 40%;
-  background-color: #3f2ebd;
-  border: none;
+    width: 40%;
+    background-color: #3f2ebd;
+    border: none;
 }
 
 .btn-calc:hover{
-  background-color: rgb(23, 10, 124);
+    background-color: rgb(23, 10, 124);
 }
 
 .btn-calc:active, .button-calc:focus{
-  background-color: #3f2ebd !important;
+    background-color: #3f2ebd !important;
 }
 
 .label-notify{
-  text-align: left;
-  height: 60px;
-  display: grid;
-  align-content: center;
+    text-align: left;
+    height: 60px;
+    display: grid;
+    align-content: center;
 }
 
 #box-notify{
-  color: red;
+    color: red;
 }
 
 .btn-type-sum, .btn-type-sub, .btn-calc {
-  box-shadow: 2px 2px 5px rgb(122, 122, 122);
+    box-shadow: 2px 2px 5px rgb(122, 122, 122);
 }
 
 
 
 @media (min-width: 320px) {
-  .label-input, .label-notify{
-      padding-left: 15px;
-  }
+    .label-input, .label-notify{
+        padding-left: 15px;
+    }
 }
 
 @media (min-width: 576px) {
-  .btn-type{
-      width: 60%;
-  }
+    .btn-type{
+        width: 60%;
+    }
 
-  .btn-type-sub{
-      width: 60%;
-  }
+    .btn-type-sub{
+        width: 60%;
+    }
 
-  .btn-type-sum{
-      margin-left: 40%;
-      width: 60%;
-  }
+    .btn-type-sum{
+        margin-left: 40%;
+        width: 60%;
+    }
 }
 
 @media (min-width: 768px) {
-  .btn-calc{
-      width: 100%;
-  }
+    .btn-calc{
+        width: 100%;
+    }
 
-  .btn-type-calc{
-      width: 100%;
-  }
+    .btn-type-calc{
+        width: 100%;
+    }
 
-  .btn-type-sum{
-      margin-left: 0%;
-  }
+    .btn-type-sum{
+        margin-left: 0%;
+    }
 }
 
 @media (min-width: 992px) {
-  #num1, #num2, #result, #txt-notify1{
-      width: 80% !important;
-      margin-left: 60px;
-  }
+    #num1, #num2, #result, #txt-notify1{
+        width: 80% !important;
+        margin-left: 60px;
+    }
 }
 
 @media (min-width: 1200px) {
-  
+    
 }
