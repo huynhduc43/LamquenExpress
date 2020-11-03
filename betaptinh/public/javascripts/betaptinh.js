@@ -67,16 +67,22 @@ function checkCondition(){
     var checked = false;
     var pheptinh = document.getElementsByName("type_calc");
     notify = document.getElementById("txt-notify1");
+    document.getElementById("result").value = "";
 
     for(var i = 0; i < pheptinh.length; i++) {
 
         if(pheptinh[i].checked){
 
             if(isValid(num1.value, num2.value)){
-                //Xử lí chia cho 0.
-                
-
                 checked = true;
+
+                //Xử lí chia cho 0.
+                if(pheptinh[i].value === "input-div" && parseFloat(num2.value) === 0){
+                    num2.value = "0"//Chỉ hiển thị 1 số 0.
+                    notify.innerHTML = "Không hợp lệ: Phép chia cho 0";
+                    return false;
+                }
+
                 break;
             } else {
                 return false;
@@ -103,7 +109,7 @@ function changeColor(){
     for(var i = 0; i < pheptinh.length; i++) {
 
         if(pheptinh[i].checked){
-            color[i].style.backgroundColor = "rgb(16, 199, 71)";
+            color[i].style.backgroundColor = "yellow";
         } 
         else {
             color[i].style.backgroundColor = " rgb(15, 226, 241)";

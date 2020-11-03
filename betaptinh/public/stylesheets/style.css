@@ -25,7 +25,7 @@ html{
 }
 
 .container__calculator{
-    background-color: #37e6a3;
+    background-color: #51eeb2;
     border-radius: 10px 10px;
     box-shadow: 5px 5px 15px rgb(73, 73, 73);
 }
@@ -56,11 +56,11 @@ html{
 }
 
 .btn-type-calc:hover{
-    background-color: rgb(16, 199, 71) !important;
+    background-color: yellow !important;
 }
 
 .btn-type-calc:active, .button-type-calc:focus{
-    background-color: rgb(7, 155, 51) !important;
+    background-color: rgb(236, 194, 3) !important;
 }
 
 input[type=radio] {
@@ -71,15 +71,15 @@ input[type=radio] {
 .btn-calc{
     width: 40%;
     background-color: #3f2ebd;
-    border: none;
+    border: none !important;
 }
 
 .btn-calc:hover{
     background-color: rgb(23, 10, 124);
 }
 
-.btn-calc:active, .button-calc:focus{
-    background-color: #3f2ebd !important;
+.btn-calc:active, .btn-calc:focus{
+    background-color:  rgb(21, 9, 117) !important;
 }
 
 .label-notify{

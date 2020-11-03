@@ -10,7 +10,7 @@ router.post('/', (req, res)=> {
   var number1 = req.body.number1;
   var number2 = req.body.number2;
   var type_calc = req.body.type_calc;
-  var result = 0;
+  var result = "";
 
 
   number1 = parseFloat(number1);
@@ -22,7 +22,7 @@ router.post('/', (req, res)=> {
       res.render('index', { 
         title: 'Bé tập tính',
         checked_sum: 'checked',
-        style_sum: 'background-color: rgb(16, 199, 71) !important',
+        style_sum: 'background-color: yellow',
         number1,
         number2,
         result
@@ -34,7 +34,7 @@ router.post('/', (req, res)=> {
       res.render('index', { 
         title: 'Bé tập tính',
         checked_sub: 'checked',
-        style_sub: 'background-color: rgb(16, 199, 71) !important',
+        style_sub: 'background-color: yellow',
         number1,
         number2,
         result 
@@ -46,7 +46,7 @@ router.post('/', (req, res)=> {
       res.render('index', { 
         title: 'Bé tập tính',
         checked_multi: 'checked',
-        style_multi: 'background-color: rgb(16, 199, 71) !important',
+        style_multi: 'background-color: yellow',
         number1,
         number2,
         result 
@@ -58,7 +58,7 @@ router.post('/', (req, res)=> {
       res.render('index', { 
         title: 'Bé tập tính',
         checked_div: 'checked',
-        style_div: 'background-color: rgb(16, 199, 71) !important',
+        style_div: 'background-color: yellow',
         number1,
         number2,
         result 
@@ -66,7 +66,7 @@ router.post('/', (req, res)=> {
       break;
 
     default:
-      result = 0;
+      //result = 0;
       res.render('index', { title: 'Bé tập tính', number1, number2, result });
   }
 
