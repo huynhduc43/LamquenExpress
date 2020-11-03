@@ -48,18 +48,18 @@
                     <div class="col-md-4 col-sm-12">
                         <div class="row">
                             <div class="col-6 type-calc__sum ">
-                                <label class="mb-0 btn btn-type-calc btn-type-sum"  onclick="changeColor()"><input name="tyle_calc" type="radio" id="input-sum" value="input-sum"> Cộng</label>
+                                <label class="mb-0 btn btn-type-calc btn-type-sum"  onclick="changeColor()" style="{{style_sum}}"><input name="type_calc" type="radio" id="input-sum" value="input-sum" {{checked_sum}}> Cộng</label>
                             </div>
                             <div class="col-6 type-calc__sub ">
-                                <label class="mb-0 btn btn-type-calc btn-type-sub" onclick="changeColor()"><input name="tyle_calc" type="radio" id="input-sub" value="input-sub"> Trừ&nbsp;&nbsp;</label>
+                                <label class="mb-0 btn btn-type-calc btn-type-sub" onclick="changeColor()" style="{{style_sub}}"><input name="type_calc" type="radio" id="input-sub" value="input-sub" {{checked_sub}}> Trừ&nbsp;&nbsp;</label>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-6 type-calc__multi">
-                                <label class="mb-0 btn btn-type-calc btn-type-sum" onclick="changeColor()"><input name="tyle_calc" type="radio" id="input-multi" value="input-multi"> Nhân</label>
+                                <label class="mb-0 btn btn-type-calc btn-type-sum" onclick="changeColor()" style="{{style_multi}}"><input name="type_calc" type="radio" id="input-multi" value="input-multi" {{checked_multi}}> Nhân</label>
                             </div>
                             <div class="col-6 type-calc__div">
-                                <label class="mb-0 btn btn-type-calc btn-type-sub"  onclick="changeColor()"><input name="tyle_calc" type="radio" id="input-div" value="input-div"> Chia</label>
+                                <label class="mb-0 btn btn-type-calc btn-type-sub"  onclick="changeColor()" style="{{style_div}}"><input name="type_calc" type="radio" id="input-div" value="input-div" {{checked_div}}> Chia</label>
                             </div>
                         </div>
                     </div>

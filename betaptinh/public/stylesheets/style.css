@@ -59,8 +59,8 @@ html{
     background-color: rgb(16, 199, 71) !important;
 }
 
-.btn-type-calc:active, .button-type:focus{
-    background-color: rgb(15, 226, 241);
+.btn-type-calc:active, .button-type-calc:focus{
+    background-color: rgb(7, 155, 51) !important;
 }
 
 input[type=radio] {

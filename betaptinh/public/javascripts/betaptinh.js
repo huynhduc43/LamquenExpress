@@ -62,21 +62,23 @@ function isValid(str_num1, str_num2){
 
 //Thực hiện tính toán, xuất kết quả
 function checkCondition(){
-    //alert("Bạn đã gửi thông tin từ form đi");
     var num1 = document.getElementById("num1");
     var num2 = document.getElementById("num2");
     var checked = false;
-    var pheptinh = document.getElementsByName("tyle_calc");
+    var pheptinh = document.getElementsByName("type_calc");
     notify = document.getElementById("txt-notify1");
 
     for(var i = 0; i < pheptinh.length; i++) {
 
         if(pheptinh[i].checked){
 
-            if(isValid(num1.value, num2.value)){    
+            if(isValid(num1.value, num2.value)){
+                //Xử lí chia cho 0.
+                
+
                 checked = true;
                 break;
-            } else{
+            } else {
                 return false;
             }
             
@@ -96,7 +98,7 @@ function checkCondition(){
 //Đổi màu khi button radio được chọn
 function changeColor(){
     var color = document.getElementsByClassName("btn-type-calc")
-    var pheptinh = document.getElementsByName("tyle-calc");
+    var pheptinh = document.getElementsByName("type_calc");
 
     for(var i = 0; i < pheptinh.length; i++) {
 
